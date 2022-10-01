@@ -3,13 +3,29 @@ import { FaRegCalendarAlt } from 'react-icons/fa';
 import { GoLocation } from 'react-icons/go';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { useLocation } from 'react-router-dom';
+import Birthday from '../images/Birthday_cake.png'
 
 const Event = () => {
+  const currentLocation = useLocation();
+  console.log({ currentLocation })
+
+  if(!currentLocation.state){
+    return (
+      <section className='event_container'>
+      <div className='event_image_container'>
+        <img src={Birthday} alt='Event image' className='event_image' />
+      </div>
+
+        <h1 className='event_info'>Sorry, no event created yet!</h1>
+    </section>
+    )
+  }
+
   const {
     state: {
       eventInfo: { eventName, hostName, startTime, endTime, location, image },
     },
-  } = useLocation();
+  } = currentLocation
 
   return (
     <section className='event_container'>
