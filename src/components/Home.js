@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import homePage from '../images/home_page.svg';
+import homePage from '../images/home_page.png';
 const Home = () => {
   return (
     <div className='main'>
