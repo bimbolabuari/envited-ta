@@ -1,25 +1,31 @@
 import React, { useState } from "react";
+import Birthday from "../images/Birthday_cake.png";
 import { useNavigate } from "react-router-dom";
 
 const Create = () => {
-  const [contactInfo, setContactInfo] = useState({
+  const [eventInfo, setEventInfo] = useState({
     eventName: "",
     hostName: "",
     startTime: "",
     endTime: "",
     location: "",
-    image: "",
+    image: Birthday,
   });
 
   const handleChange = (event) => {
-    setContactInfo({ ...contactInfo, [event.target.name]: event.target.value });
+    setEventInfo({ ...eventInfo, [event.target.name]: event.target.value });
   };
+
+  const handleImageUpload = ({target: {files}}) => {
+    setEventInfo({...eventInfo, image: URL.createObjectURL(files[0])})
+  }
 
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
+    console.log({eventInfo})
     event.preventDefault();
-    navigate("/event");
+    navigate("/event", {state: {eventInfo}});
   };
 
   return (
@@ -30,82 +36,90 @@ const Create = () => {
           <label htmlFor="event_name">
             {" "}
             Event Name
-            <input
+
+          </label>
+          <input
               className="input"
-              value={contactInfo.eventName}
+              value={eventInfo.eventName}
               onChange={handleChange}
               type="text"
               name="eventName"
               required
             />
-          </label>
         </div>
         <div className="input_container">
           <label htmlFor="host_name">
             Host Name{" "}
-            <input
+   
+          </label>
+          <input
               className="input"
-              value={contactInfo.hostName}
+              value={eventInfo.hostName}
               onChange={handleChange}
               type="text"
               name="hostName"
               required
             />
+        </div>
+        <div className="input_container">
+          <label htmlFor="location">
+            Event Location{" "}
+     
           </label>
+          <input
+              className="input"
+              type="text"
+              value={eventInfo.location}
+              onChange={handleChange}
+              name="location"
+              required
+            />
         </div>
         <div className="input_container">
           <label htmlFor="start_time">
             Start Time
-            <input
+  
+          </label>
+          <input
               className="input"
-              value={contactInfo.startTime}
+              value={eventInfo.startTime}
               onChange={handleChange}
               type="datetime-local"
               name="startTime"
               required
             />
-          </label>
         </div>
         <div className="input_container">
           <label htmlFor="end_time">
             {" "}
             End Time
-            <input
+  {" "}
+          </label>
+          <input
               className="input"
-              value={contactInfo.endTime}
+              value={eventInfo.endTime}
               onChange={handleChange}
               type="datetime-local"
               name="endTime"
               required
-            />{" "}
-          </label>
-        </div>
-        <div className="input_container">
-          <label htmlFor="location">
-            Event Location{" "}
-            <input
-              className="input"
-              type="text"
-              value={contactInfo.location}
-              onChange={handleChange}
-              name="location"
-              required
             />
-          </label>
         </div>
+   
         <div className="input_container">
           <label htmlFor="photos">Select a photo:</label>
           <input
+          className="input"
             type="file"
-            value={contactInfo.image}
-            onChange={handleChange}
-            id="myfile"
-            name="photos"
+            onChange={handleImageUpload}
+            id="image"
+            name="image"
           />
         </div>
 
         <div className="event_button_container">
-          <button className="button event_button">🎉 Next</button>
+          <div className="event_button">
+          <button className="button next">🎉 Next</button>
+          </div>
         </div>
       </form>
     </div>

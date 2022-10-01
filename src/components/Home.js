@@ -1,29 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import homePage from "../images/home_page.svg";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import homePage from '../images/home_page.svg';
 const Home = () => {
   return (
-    <div className="main">
-      <div className="first_container">
-        <ul className="header_one">
+    <div className='main'>
+      <div className='first_container'>
+        <ul className='header_one'>
           <li>
-            <h1 className="header">Imagine if </h1>
+            <h1 className='header'>Imagine if </h1>
           </li>
-          <li className="span">
+          <li className='span'>
             <span>Snapchat</span>
           </li>
           <li>
-            <h2 className="header">had events</h2>
+            <h2 className='header'>had events</h2>
           </li>
         </ul>
-        <p className="paragraph">
+        <div className='paragraph_container'>
+        <p className='paragraph'>
           Easily host and share events with your friends across any social media
         </p>
+        </div>
+    
       </div>
-      <img src={homePage} alt="Ticket image" className="image" />
-      <div className="event_button_container">
-        <Link to="/create" className="event_button">
-          <button className="button">🎉 Create my event</button>
+      <div className='image_ticket_container'>
+      <img src={homePage} alt='Ticket image'  className='image'  />
+      </div>
+      
+      <div className='event_button_container absolute'>
+        <Link to='/create' className='event_button'>
+          <button className='button'>🎉 Create my event</button>
         </Link>
       </div>
     </div>

@@ -1,35 +1,76 @@
-import React from "react";
-import Birthday from "../images/Birthday_cake.png";
+import React from 'react';
+import { FaRegCalendarAlt } from 'react-icons/fa';
+import { GoLocation } from 'react-icons/go';
+import { MdKeyboardArrowRight } from 'react-icons/md';
+import { useLocation } from 'react-router-dom';
 
 const Event = () => {
+  const {
+    state: {
+      eventInfo: { eventName, hostName, startTime, endTime, location, image },
+    },
+  } = useLocation();
+
   return (
-    <section>
-      <img src={Birthday} alt="Birthday image" className="image" />
-      <ul>
+    <section className='event_container'>
+      <div className='event_image_container'>
+        <img src={image} alt='Event image' className='event_image' />
+      </div>
+
+      <ul className='event_info'>
         <li>
           <ul>
             <li>
-              <h2>Birthday Bash</h2>
+              <h2 className='event_name'>{eventName}</h2>
             </li>
             <li>
-              <span>Hosted by Elysia</span>
+              <p className='host_name'>
+                Hosted by <span>{hostName}</span>
+              </p>
             </li>
           </ul>
         </li>
         <li>
-          <ul>
-            <li>
-              <img></img>
+          <ul className='event_first_container'>
+           <li>
+            <ul className='flex'>
+            <li className='icon_container'>
+              <FaRegCalendarAlt className='icon' />
             </li>
-            <li>18 August 6:00PM</li>
-            <li>to 19 August 1:00PM UTC +10</li>
+            <li>
+              <ul className='spacing'>
+              <li className='info'>{startTime}</li>
+                <li className='info_two'>to {endTime} UTC+10 </li>
+              </ul>
+            </li>
+            </ul>
+           </li>
+           <li>
+              <MdKeyboardArrowRight />
+            </li>
           </ul>
-          <ul>
+        </li>
+
+          <li>
+          <ul className='event_first_container'>
+          
             <li>
-              <img></img>
+              <ul className='flex'>
+              <li className='icon_container'>
+              <GoLocation className='icon' />
             </li>
-            <li>Street name</li>
-            <li>Suburb, State, Postcode</li>
+            <li>
+            <ul className='spacing'>
+              <li className='info'>Street name</li>
+                <li className='info_two'>{location}</li>
+              </ul>
+            </li>
+   
+              </ul>
+            </li>
+            <li>
+              <MdKeyboardArrowRight />
+            </li>
           </ul>
         </li>
       </ul>
