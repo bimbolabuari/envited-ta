@@ -23,7 +23,6 @@ const Create = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
-    console.log({eventInfo})
     event.preventDefault();
     navigate("/event", {state: {eventInfo}});
   };

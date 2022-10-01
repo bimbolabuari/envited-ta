@@ -7,7 +7,6 @@ import Birthday from '../images/Birthday_cake.png'
 
 const Event = () => {
   const currentLocation = useLocation();
-  console.log({ currentLocation })
 
   if(!currentLocation.state){
     return (
