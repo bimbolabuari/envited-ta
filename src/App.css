@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+html {
+  background-color: #ddd;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  background: #ddd;
+  height: 100%;
+}
+
+.event_image {
+  width: 100%;
+}
+
+.event_name {
+  width: 327px;
+  height: 37px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+  color: #240d57;
+}
+
+.event_info {
+  padding: 20px;
+}
+
+.host_name,
+.host_name > span {
+  height: 15px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #828282;
+  margin-bottom: 20px;
+}
+
+.host_name > span {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.event_container {
+  background-color: #ddd;
+  height: 100vh;
+}
+
+.first_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon_container {
+  padding: 8px;
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.icon {
+  font-size: 25px;
+  color: #8456ec;
+}
+
+.event_first_container {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0 15px 0;
+}
+
+.info {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #240d57;
+  margin: 5px 0;
+}
+
+.info_two {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #4f4f4f;
+}
+
+.spacing {
+  margin-left: 15px;
+  height: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.header_one {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.paragraph,
+.input_container > label {
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 18px;
+  padding: 0 5px;
+  text-align: center;
+  height: 36px;
+  color: #4f4f4f;
+  margin: 10px 0;
+}
+
+.header,
+.span {
+  margin-bottom: 10px;
+  font-size: 36px;
+}
+
+.span {
+  background: linear-gradient(90deg, #8456ec 24.2%, #e87bf8 120.46%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.image {
+  width: 100%;
+  align-self: center;
+  height: 600px;
+}
+
+.image_ticket_container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.input_container > label {
+  text-align: left;
+}
+
+.event_button {
+  padding: 16px;
+  background: linear-gradient(90deg, #8456ec 3.25%, #e87bf8 100%);
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.event_button_container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.create_container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f6f2ff;
+}
+
+.form_container {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 50px 10px;
+  background: #ccb6ff;
+  border-radius: 5px;
+}
+
+.input_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  margin-left: 5px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 18px;
+  border: none;
+  color: #4f4f4f;
+}
+
+.next {
+  padding: 0 66px;
+}
+
+.h2 {
+  margin: 20px 0;
+  font-size: 32px;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .header,
+  .span {
+    font-size: 42px;
+  }
+
+  .paragraph,
+  .input_container > label {
+    font-size: 21px;
+  }
+
+  .event_container {
+    width: 70%;
+    margin: 50px auto;
+  }
+
+  .event_info {
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 996px) {
+  .main {
+    display: flex;
+    flex-direction: row-reverse;
+    background: #ddd;
+    position: relative;
+    height: 100%;
+    width: 80%;
+    margin: 50px auto 50px;
+  }
+
+  .first_container {
+    width: 100%;
+  }
+
+  .absolute {
+    position: absolute;
+    bottom: 50%;
+  }
+
+  .header_one {
+    font-size: 38px;
+    text-align: right;
+    margin-top: 0;
+  }
+
+  .header,
+  .span {
+    margin-bottom: 10px;
+    font-size: 36px;
+  }
+
+  .image_container {
+    position: absolute;
+    align-self: center;
+  }
+
+  .event_container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 70px auto;
+    width: 80%;
+  }
+
+  .event_image_container {
+    width: 47%;
+    max-width: 500px;
+    margin: 0 40px;
+  }
+
+  .event_info {
+    padding-top: 0;
+    width: 47%;
+  }
+
+  .image {
+    width: 100%;
+    height: 700px;
+  }
+
+  .paragraph_container {
+    display: flex;
+    justify-content: end;
+    text-align: right;
+    width: 100%;
+  }
+
+  .image_ticket_container,
+  .paragraph {
+    max-width: 460px;
+  }
+
+  .paragraph {
+    text-align: right;
+  }
+}
